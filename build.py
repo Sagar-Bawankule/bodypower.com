@@ -18,6 +18,7 @@ Shared chrome lives in src/partials/. Edit CONFIG below to supply confirmed
 URLs. Anything left as None renders a safe fallback instead of a guessed URL.
 """
 
+import hashlib
 import json
 import os
 import re
@@ -110,6 +111,10 @@ def tokens():
     t["GTM_ID"] = CONFIG["gtm_id"] or ""
     t["TICKET_FROM"] = CONFIG["ticket_from"]
     t["MODE"] = "review" if CONFIG["review_mode"] else "present"
+    # Content hashes for the CSS/JS URLs (?v=...). Filenames never change between deploys, so without
+    # this a browser (notably Safari) can pair fresh HTML with a stale cached stylesheet.
+    for key, rel in (("CSS_V", "css/styles.css"), ("JS_V", "js/main.js")):
+        t[key] = hashlib.md5((SRC / "assets" / rel).read_bytes()).hexdigest()[:10]
     # reusable content partials, referenced in pages as {{TF_PANEL}} etc.
     for name in ("TF_PANEL", "TICKER", "SPEAKERS"):
         t[name] = (SRC / "partials" / (name.lower().replace("_", "-") + ".html")).read_text(encoding="utf-8").strip()
