@@ -33,9 +33,9 @@ src/assets/js/main.js    header, drawer, reveal, consent, tracking, shop filter,
 | `review_mode` | `False` | `False` = presentation view: empty slots get a subtle branded fill and pending notes are quiet. `True` = reviewer view: every empty slot shows its photo brief and pending items get loud yellow tags |
 
 ## Old-site URLs
-`dist/_redirects` 301s `/workshops/` to `/games/#education` and `/pharmacy/` to `/partner/?category=pharmacy`.
-The pharmacy partner deck is still linked at `https://bodypower.com/pharmacy/bodypower-pharmacy-partners.pdf`.
-Copy that PDF across before the old hosting is switched off.
+`vercel.json` 301-redirects `/workshops/` to `/games/#education`, `/pharmacy/` to `/partner/?category=pharmacy`,
+and the old pharmacy deck URL to `/assets/docs/bodypower-pharmacy-partners.pdf` (the PDF is now hosted in this repo).
+Once bodypower.com points here, anything else that existed on the old site returns the branded 404 page.
 
 ## Assets
 - `src/assets/img/bodypower-logo-*`: trimmed from the official transparent logo (colours untouched).
@@ -66,3 +66,23 @@ after the visitor accepts analytics cookies. Events: `ticket_click` /
 `ticket_click_pending`, `community_click`, `transform_click`, `shop_click`,
 `partner_click`, `licence_click`, `shop_filter`, `generate_lead` (form success).
 Add the GTM container in `applyConsent()` in main.js once the ID is confirmed.
+
+## Deploy to Vercel
+`vercel.json` already sets the build command (`python3 build.py`), output directory (`dist`), trailing-slash URLs,
+redirects and security/cache headers. No framework preset, no dependencies, no install step.
+
+1. Vercel dashboard -> **Add New -> Project** -> import `Sagar-Bawankule/bodypower.com`.
+2. Leave **Framework Preset** as *Other*. Build/Output settings are read from `vercel.json`; don't override them.
+3. *(Optional)* **Environment Variables**: `SITE_URL` = the exact public address (no trailing slash), e.g. `https://www.bodypower.com`.
+   Canonical URLs, the sitemap and social previews use it. Leave unset for production on the real domain.
+   For a first test on a `*.vercel.app` address set it to that address so Google doesn't see a mismatch.
+4. **Deploy.** Every push to `main` redeploys; other branches get preview URLs (Vercel marks previews `noindex`).
+5. **Domain** (Settings -> Domains): add `www.bodypower.com`, then `bodypower.com` set to redirect to `www`.
+   Point DNS as Vercel instructs *only when ready to switch* from the old site (see launch checklist below).
+
+### Before pointing the real domain at Vercel
+- The old site's pages (`/workshops/`, `/pharmacy/` and the ticket buttons) stop working the moment DNS changes. Confirm the ticket pop-up works on the preview first.
+- Check the Ticket Tailor checkout opens from the preview URL, and the Partner enquiry form (still demo mode: set `form_endpoint` in `build.py` first).
+- Copy anything else the old host serves that you still need.
+- Lower the domain's DNS TTL a day beforehand so a rollback is quick.
+- Fill in the `PENDING` items listed in this README, or leave `review_mode` off so they read as quiet notes.

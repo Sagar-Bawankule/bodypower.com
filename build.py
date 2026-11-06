@@ -19,6 +19,7 @@ URLs. Anything left as None renders a safe fallback instead of a guessed URL.
 """
 
 import json
+import os
 import re
 import shutil
 import sys
@@ -28,7 +29,9 @@ from pathlib import Path
 # CONFIG — values BodyPower must confirm before launch (brief §14)
 # --------------------------------------------------------------------------
 CONFIG = {
-    "site_url": "https://www.bodypower.com",
+    # Used for canonical URLs, sitemap and social previews. Override per environment with
+    # the SITE_URL env var (e.g. on a Vercel test deployment).
+    "site_url": os.environ.get("SITE_URL", "https://www.bodypower.com").rstrip("/"),
     # Final Games ticketing URL. None = buttons point to /games/#tickets
     # (brief §6.1: "Do not guess or publish an unverified URL").
     # Verified 2026-11-06: Ticket Tailor event 2207403 = "BODYPOWER GAMES 2027 – ExCeL London"
@@ -203,15 +206,6 @@ def main():
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "".join(f"  <url><loc>{u}</loc></url>\n" for u in sitemap)
         + "</urlset>\n",
-        encoding="utf-8",
-    )
-    # 301s for URLs that exist on the old site (brief §9: review indexed URLs, apply redirects).
-    # Netlify / Cloudflare Pages format; mirror these in the host's config if it differs.
-    (DIST / "_redirects").write_text(
-        "/workshops/  /games/#education  301\n"
-        "/workshops   /games/#education  301\n"
-        "/pharmacy/   /partner/?category=pharmacy  301\n"
-        "/pharmacy    /partner/?category=pharmacy  301\n",
         encoding="utf-8",
     )
     (DIST / "robots.txt").write_text(
