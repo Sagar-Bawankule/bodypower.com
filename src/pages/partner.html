@@ -1,0 +1,121 @@
+<!--meta
+title: Partner With BodyPower | Sponsorship, Exhibiting, Licensing & Retail
+description: Enquire about event sponsorship, exhibiting at BodyPower Games, Performance Café licensing, clothing and retail partnerships, distribution and marketing collaborations.
+path: /partner/
+nav: partner
+-->
+<section class="hero hero--page" style="min-height:auto" aria-labelledby="partner-title">
+  <div class="container hero__content">
+    <p class="eyebrow">Partner with BodyPower</p>
+    <h1 class="hero__title" id="partner-title">Let's build<br><span class="hl">something.</span></h1>
+    <p class="hero__sub">Since 2008, BodyPower has worked with athletes, brands and industry professionals. Tell us what you have in mind and the right person on our team will follow up. Prefer email? <a class="hl" href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a></p>
+  </div>
+</section>
+
+<section class="section section--tight" aria-labelledby="form-title">
+  <div class="container grid-2 grid-2--top partner-layout">
+    <aside class="stack-lg">
+      <h2 class="h3">Ways to partner</h2>
+      <div class="pillars pillars--stack">
+        <div class="pillar"><span class="pillar__num">01</span><h3 class="h4">Event sponsorship</h3><p>Put your brand at the heart of BodyPower Games.</p></div>
+        <div class="pillar"><span class="pillar__num">02</span><h3 class="h4">Exhibit at BodyPower Games</h3><p>Showcase products and services to the fitness community at ExCeL London.</p></div>
+        <div class="pillar"><span class="pillar__num">03</span><h3 class="h4">Performance Café licensing</h3><p>Operate a BodyPower Performance Café.</p></div>
+        <div class="pillar"><span class="pillar__num">04</span><h3 class="h4">Pharmacy partners</h3><p>You prescribe. BodyPower coaches. Add structured nutrition, strength and behaviour-change coaching to your patient pathway. The pharmacy remains clinically in control.</p><a class="link-arrow" href="https://bodypower.com/pharmacy/bodypower-pharmacy-partners.pdf" target="_blank" rel="noopener">Partner deck (PDF)<span class="sr-only"> (opens in a new tab)</span> {{EXT}}</a></div>
+        <div class="pillar"><span class="pillar__num">05</span><h3 class="h4">Retail, distribution &amp; marketing</h3><p>Clothing and retail partnerships, nutrition product distribution and marketing collaborations.</p></div>
+      </div>
+    </aside>
+
+    <div class="stack-lg">
+      <h2 class="h3" id="form-title">Partnership enquiry</h2>
+
+      <div id="form-success" class="alert alert--success" tabindex="-1" role="status" hidden>
+        <h2>Thank you. We've got it.</h2>
+        <p>Your <strong data-success-category></strong> enquiry has been received. We'll send an acknowledgement to the email address you gave, and the relevant member of the team will follow up.</p>
+      </div>
+
+      <form class="form" id="partner-form" novalidate data-endpoint="{{FORM_ENDPOINT}}">
+        <div class="alert alert--error" id="form-errors" tabindex="-1" role="alert" hidden>
+          <h2>Please check the form</h2>
+          <ul></ul>
+        </div>
+
+        <p class="small muted">Fields marked <span class="req" aria-hidden="true">*</span> are required.</p>
+
+        <div class="form__row form__row--2">
+          <div class="field">
+            <label for="f-name">Full name<span class="req" aria-hidden="true">*</span></label>
+            <input class="input" id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-error">
+            <p class="field__error" id="f-name-error" aria-live="polite"><span></span></p>
+          </div>
+          <div class="field">
+            <label for="f-company">Company / organisation</label>
+            <input class="input" id="f-company" name="company" type="text" autocomplete="organization">
+          </div>
+        </div>
+
+        <div class="form__row form__row--2">
+          <div class="field">
+            <label for="f-email">Business email<span class="req" aria-hidden="true">*</span></label>
+            <input class="input" id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="f-email-error">
+            <p class="field__error" id="f-email-error" aria-live="polite"><span></span></p>
+          </div>
+          <div class="field">
+            <label for="f-phone">Telephone</label>
+            <input class="input" id="f-phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="form__row form__row--2">
+          <div class="field">
+            <label for="f-country">Country / location</label>
+            <input class="input" id="f-country" name="country" type="text" autocomplete="country-name">
+          </div>
+          <div class="field">
+            <label for="f-category">Enquiry type<span class="req" aria-hidden="true">*</span></label>
+            <select class="select" id="f-category" name="category" required aria-describedby="f-category-error">
+              <option value="">Choose one…</option>
+              <option value="event-sponsorship">Event sponsorship</option>
+              <option value="games-exhibiting">BodyPower Games exhibiting</option>
+              <option value="cafe-licensing">Performance Café licensing</option>
+              <option value="retail">Clothing / retail partnership</option>
+              <option value="distribution">Nutrition product distribution</option>
+              <option value="pharmacy">Pharmacy partnership (weight-management coaching)</option>
+              <option value="marketing">Marketing collaboration</option>
+              <option value="other">Other commercial opportunity</option>
+            </select>
+            <p class="field__error" id="f-category-error" aria-live="polite"><span></span></p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-message">Message / proposal<span class="req" aria-hidden="true">*</span></label>
+          <textarea class="textarea" id="f-message" name="message" maxlength="2000" required aria-describedby="f-message-hint f-message-count f-message-error"></textarea>
+          <div style="display:flex;justify-content:space-between;gap:16px">
+            <p class="field__hint" id="f-message-hint">Tell us about your business and what you'd like to do with BodyPower.</p>
+            <p class="counter" id="f-message-count" aria-live="off">0 / 2000 characters</p>
+          </div>
+          <p class="field__error" id="f-message-error" aria-live="polite"><span></span></p>
+        </div>
+
+        <div class="field">
+          <label class="check" for="f-privacy">
+            <input type="checkbox" id="f-privacy" name="privacy" value="yes" required aria-describedby="f-privacy-error">
+            <span>I have read the <a href="/privacy/" target="_blank" rel="noopener">privacy notice<span class="sr-only"> (opens in a new tab)</span></a> and understand how BodyPower will use my details to respond to this enquiry.<span class="req" aria-hidden="true">*</span></span>
+          </label>
+          <p class="field__error" id="f-privacy-error" aria-live="polite"><span></span></p>
+        </div>
+
+        <!-- spam protection: honeypot (add server-side rate limiting / Turnstile when backend is chosen) -->
+        <div class="hp" aria-hidden="true">
+          <label for="f-website">Leave this field empty</label>
+          <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <input type="hidden" id="f-source" name="source">
+
+        <div>
+          <button class="btn btn--primary" type="submit">Send enquiry {{ARROW}}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,62 @@
+<header class="site-header" id="site-header">
+    <div class="topbar">
+      <div class="container topbar__inner">
+        <p class="topbar__est"><span class="dot" aria-hidden="true"></span>Established 2008<span class="topbar__sep" aria-hidden="true">/</span><a href="/games/">BodyPower Games · 21–23 May 2027 · ExCeL London</a></p>
+        <ul class="topbar__links" aria-label="Quick actions">
+          <li><a {{COMMUNITY_ATTRS}} data-track-location="topbar">Join our community {{EXT}}{{NEWTAB}}</a></li>
+          <li><a href="/shop/" data-track="shop_click" data-track-location="topbar">Shop BodyPower</a></li>
+          <li><a href="/partner/" data-track="partner_click" data-track-location="topbar">Partner with BodyPower</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="navbar">
+      <div class="container navbar__inner">
+        <a class="logo" href="/">
+          <img class="logo__img" src="/assets/img/bodypower-logo-word.webp" width="480" height="82" alt="BodyPower home">
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <ul class="nav__list">
+            <li><a href="/games/" data-nav="games">Games</a></li>
+            <li><a href="/shop/" data-nav="shop">Shop</a></li>
+            <li><a href="/transform/" data-nav="transform">Transform</a></li>
+            <li><a href="/cafe/" data-nav="cafe">Performance Café</a></li>
+            <li><a href="/partner/" data-nav="partner">Partner With Us</a></li>
+          </ul>
+        </nav>
+        <div class="navbar__actions">
+          <a class="btn btn--primary btn--sm" {{TICKET_ATTRS}} data-track-location="header">
+            <span class="hide-sm">Buy </span>Tickets{{TICKET_NOTE}}
+          </a>
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu">
+            <svg class="icon icon--menu" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+            <svg class="icon icon--close" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="drawer" id="drawer" hidden>
+    <div class="drawer__inner container">
+      <nav aria-label="Mobile">
+        <ul class="drawer__nav">
+          <li><a href="/" data-nav="home"><span>00</span>Home</a></li>
+          <li><a href="/games/" data-nav="games"><span>01</span>Games</a></li>
+          <li><a href="/shop/" data-nav="shop"><span>02</span>Shop</a></li>
+          <li><a href="/transform/" data-nav="transform"><span>03</span>Transform</a></li>
+          <li><a href="/cafe/" data-nav="cafe"><span>04</span>Performance Café</a></li>
+          <li><a href="/partner/" data-nav="partner"><span>05</span>Partner With Us</a></li>
+        </ul>
+      </nav>
+      <div class="drawer__actions">
+        <a class="btn btn--primary" {{TICKET_ATTRS}} data-track-location="drawer">Buy Games Tickets{{TICKET_NOTE}} {{TICKET_ICON}}</a>
+        <a class="btn btn--ghost" {{COMMUNITY_ATTRS}} data-track-location="drawer">Join Our Community{{NEWTAB}} {{EXT}}</a>
+        <a class="btn btn--ghost" href="/shop/" data-track="shop_click" data-track-location="drawer">Shop BodyPower {{ARROW}}</a>
+      </div>
+      <ul class="drawer__secondary">
+        <li><a href="/our-story/">Our Story</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+      <p class="drawer__est">BodyPower — Established 2008</p>
+    </div>
+  </div>

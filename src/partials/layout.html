@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en-GB" class="no-js mode-{{MODE}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{TITLE}}</title>
+  <meta name="description" content="{{DESCRIPTION}}">
+  <meta name="robots" content="{{ROBOTS}}">
+  <link rel="canonical" href="{{CANONICAL}}">
+  <meta name="theme-color" content="#101111">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BodyPower">
+  <meta property="og:title" content="{{TITLE}}">
+  <meta property="og:description" content="{{DESCRIPTION}}">
+  <meta property="og:url" content="{{CANONICAL}}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://www.bodypower.com/assets/img/bodypower-logo-full.png">
+  <!-- og:image: swap for an approved 1200x630 event photograph once supplied -->
+  <link rel="preload" as="image" href="/assets/img/bodypower-logo-word.webp" type="image/webp">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script>document.documentElement.classList.replace('no-js','js');</script>
+  <script type="application/ld+json">{{JSONLD}}</script>
+</head>
+<body data-page="{{PAGE}}" data-gtm="{{GTM_ID}}" data-ticket-widget="{{TICKET_WIDGET}}">
+  <a class="skip-link" href="#main">Skip to content</a>
+  {{HEADER}}
+  <main id="main" tabindex="-1">
+{{CONTENT}}
+  </main>
+  {{FOOTER}}
+
+  <div class="cookie" id="cookie-banner" role="region" aria-label="Cookie consent" hidden>
+    <p class="cookie__text">We use essential cookies to run this site. With your permission we'd also use analytics cookies to understand how it's used. <a href="/cookies/">Cookie policy</a></p>
+    <div class="cookie__actions">
+      <button type="button" class="btn btn--ghost btn--sm" data-consent="denied">Reject analytics</button>
+      <button type="button" class="btn btn--primary btn--sm" data-consent="granted">Accept analytics</button>
+    </div>
+  </div>
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
