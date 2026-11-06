@@ -388,4 +388,99 @@
       }
     });
   }
+
+  /* ------------------------------------------------------------------
+     Motion control (WCAG 2.2.2): any moving band can be paused; the choice is remembered
+     ------------------------------------------------------------------ */
+  const root = document.documentElement;
+  if (storage.get('bp-motion') === 'paused') root.classList.add('motion-paused');
+  $$('[data-motion-toggle]').forEach((btn) => {
+    const label = $('span', btn);
+    const sync = () => {
+      const paused = root.classList.contains('motion-paused');
+      btn.setAttribute('aria-pressed', String(paused));
+      if (label) label.textContent = paused ? 'Play motion' : 'Pause motion';
+    };
+    sync();
+    btn.addEventListener('click', () => {
+      root.classList.toggle('motion-paused');
+      storage.set('bp-motion', root.classList.contains('motion-paused') ? 'paused' : 'playing');
+      sync();
+    });
+  });
+
+  /* ------------------------------------------------------------------
+     Countdown to BodyPower Games
+     ------------------------------------------------------------------ */
+  $$('[data-countdown]').forEach((el) => {
+    const target = new Date(el.dataset.countdown).getTime();
+    if (Number.isNaN(target)) return;
+    const out = { d: $('[data-cd="d"]', el), h: $('[data-cd="h"]', el), m: $('[data-cd="m"]', el), s: $('[data-cd="s"]', el) };
+    const pad = (n, l = 2) => String(n).padStart(l, '0');
+    const tick = () => {
+      const left = Math.floor((target - Date.now()) / 1000);
+      if (left <= 0) { el.classList.add('is-live'); return false; }
+      out.d.textContent = pad(Math.floor(left / 86400), 2);
+      out.h.textContent = pad(Math.floor((left % 86400) / 3600));
+      out.m.textContent = pad(Math.floor((left % 3600) / 60));
+      out.s.textContent = pad(left % 60);
+      return true;
+    };
+    if (tick()) {
+      const iv = setInterval(() => { if (!tick()) clearInterval(iv); }, 1000);
+    }
+  });
+
+  /* ------------------------------------------------------------------
+     Carousels (native scroll-snap + prev/next buttons)
+     ------------------------------------------------------------------ */
+  $$('[data-carousel]').forEach((car) => {
+    const track = $('.carousel__track', car);
+    const prev = $('[data-carousel-prev]', car);
+    const next = $('[data-carousel-next]', car);
+    if (!track || !prev || !next) return;
+    const step = () => (track.querySelector('li')?.getBoundingClientRect().width || 280) + 16;
+    const sync = () => {
+      prev.disabled = track.scrollLeft <= 4;
+      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+    };
+    const go = (dir) => track.scrollBy({ left: dir * step(), behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+    prev.addEventListener('click', () => go(-1));
+    next.addEventListener('click', () => go(1));
+    track.addEventListener('scroll', () => requestAnimationFrame(sync), { passive: true });
+    window.addEventListener('resize', sync);
+    sync();
+  });
+
+  /* ------------------------------------------------------------------
+     Mobile ticket bar: appears once the visitor has scrolled past the hero fold
+     ------------------------------------------------------------------ */
+  const ticketBar = $('.ticket-bar');
+  if (ticketBar) {
+    const sync = () => {
+      const show = window.scrollY > 380;
+      ticketBar.classList.toggle('is-visible', show);
+      document.body.classList.toggle('has-ticket-bar', show);
+    };
+    window.addEventListener('scroll', sync, { passive: true });
+    sync();
+  }
+
+  /* ------------------------------------------------------------------
+     Hero parallax (off for reduced motion and when motion is paused)
+     ------------------------------------------------------------------ */
+  const heroEl = $('.hero');
+  if (heroEl && $('.hero__bg img', heroEl) && !reducedMotion.matches) {
+    let queued = false;
+    window.addEventListener('scroll', () => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(() => {
+        queued = false;
+        if (root.classList.contains('motion-paused')) return;
+        const y = Math.min(window.scrollY, heroEl.offsetHeight);
+        heroEl.style.setProperty('--py', (y * 0.16).toFixed(1));
+      });
+    }, { passive: true });
+  }
 })();

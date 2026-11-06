@@ -4,96 +4,187 @@ description: BodyPower Games London 2027: three days of fitness, performance, di
 path: /games/
 nav: games
 -->
-<!-- Source for event copy: official Ticket Tailor event page (BODYPOWER GAMES 2027), checked 2026-11-06. -->
+<!-- Event copy: official Ticket Tailor event page and the BodyPower Games site, checked 2026-11-06. -->
 <section class="hero hero--page" aria-labelledby="games-title">
-  <figure class="slot hero__bg">
-    <div class="slot__media"><img src="/assets/img/temp/venue-excel-2000.webp" srcset="/assets/img/temp/venue-excel-1000.webp 1000w, /assets/img/temp/venue-excel-2000.webp 2000w" sizes="100vw" width="2000" height="1333" alt="The glass main entrance of ExCeL London" fetchpriority="high" data-temp-image></div>
-    <figcaption class="slot__label"><b>Photo slot — Games hero</b>Approved Games branding with original event imagery</figcaption>
-  </figure>
-  <div class="container hero__content">
+  <div class="slot hero__bg" style="--focus: 68% 38%">
+    <div class="slot__media"><img src="/assets/img/hero/games-1600.webp" srcset="/assets/img/hero/games-1000.webp 1000w, /assets/img/hero/games-1600.webp 1600w" sizes="100vw" width="1600" height="1067" alt="" fetchpriority="high"></div>
+    <span class="slot__label"><b>Photo slot — Games hero</b>Original event imagery</span>
+  </div>
+  <div class="container hero__inner">
     <img class="hero__logo" src="/assets/img/brand/bodypower-games-2027.webp" width="1600" height="509" alt="The BodyPower Games">
-    <p class="eyebrow">BodyPower Games London 2027</p>
+    <p class="hero__kicker">BodyPower Games London 2027</p>
     <h1 class="hero__title" id="games-title">The future<br>of fitness<br><span class="hl">is live.</span></h1>
-    <p class="hero__tagline">Train it. Test it. <span class="hl">Experience it.</span></p>
-    <dl class="hero__meta">
-      <div><dt>Dates</dt><dd>Fri 21 – Sun 23 May 2027</dd></div>
-      <div><dt>Venue</dt><dd>ExCeL London, E16 1XL</dd></div>
-      <div><dt>Early Bird</dt><dd>Until 31 Dec 2026</dd></div>
-    </dl>
-    <div class="btn-row">
-      <a class="btn btn--primary" {{TICKET_ATTRS}} data-track-location="games_hero">Buy Tickets{{TICKET_NOTE}} {{TICKET_ICON}}</a>
-      <a class="btn btn--ghost" href="#tickets">Compare tickets</a>
+    <div class="hero__row">
+      <div class="stack">
+        <p class="hero__tagline">Train it. Test it. <span class="hl">Experience it.</span></p>
+        <dl class="hero__meta">
+          <div><dt>Dates</dt><dd>Fri 21 – Sun 23 May 2027</dd></div>
+          <div><dt>Venue</dt><dd>ExCeL London, E16 1XL</dd></div>
+          <div><dt>Early Bird</dt><dd>From {{TICKET_FROM}} · until 31 Dec 2026</dd></div>
+        </dl>
+        <div class="btn-row">
+          <a class="btn btn--primary" {{TICKET_ATTRS}} data-track-location="games_hero">Buy Tickets{{TICKET_NOTE}} {{TICKET_ICON}}</a>
+          <a class="btn btn--ghost" href="#tickets">Compare tickets</a>
+        </div>
+      </div>
+      <div class="countdown" data-countdown="2027-05-21T09:00:00+01:00">
+        <p class="countdown__label">Doors open in</p>
+        <p class="countdown__digits" aria-hidden="true">
+          <span><b data-cd="d">00</b><small>Days</small></span>
+          <span><b data-cd="h">00</b><small>Hours</small></span>
+          <span><b data-cd="m">00</b><small>Mins</small></span>
+          <span><b data-cd="s">00</b><small>Secs</small></span>
+        </p>
+        <p class="countdown__live">The Games are live</p>
+        <p class="sr-only">BodyPower Games opens on Friday 21 May 2027 at ExCeL London.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Five experiences -->
-<section class="section" aria-labelledby="concept-title">
+{{TICKER}}
+
+<!-- FIVE EXPERIENCES -->
+<section class="section" id="experiences" style="padding-top: calc(var(--section-y) * .8)" aria-labelledby="concept-title">
   <div class="container">
     <div class="section-head section-head--split">
       <div class="stack">
         <p class="eyebrow">Five experiences. One unmissable weekend.</p>
-        <h2 class="h2" id="concept-title">Three days.<br>One roof.</h2>
+        <h2 class="h2" id="concept-title">Three days.<br>One <span class="mark">roof.</span></h2>
       </div>
       <div class="stack">
         <p class="lead">Get ready for three days of fitness, performance, discovery and live entertainment in London.</p>
         <p class="muted">Discover the latest in fitness, nutrition, sportswear, recovery and performance. Learn from industry experts, explore new products and technologies, watch incredible demonstrations and get involved in interactive experiences designed to inspire you, whatever your fitness level.</p>
       </div>
     </div>
-    <div class="pillars pillars--5">
-      <div class="pillar" data-reveal><span class="pillar__num">01</span><h3 class="h3">Training</h3><p class="pillar__kicker">Discover your potential.</p><p>Seven interactive training tests. Watch experts, learn from coaches and discover opportunities to try something new.</p><a class="link-arrow" href="#tests">The seven tests {{ARROW}}</a></div>
-      <div class="pillar" data-reveal style="--d:1"><span class="pillar__num">02</span><h3 class="h3">Expo</h3><p class="pillar__kicker">Discover what's next.</p><p>Fitness equipment, nutrition, apparel, recovery, health services and performance technology. Meet brands and discover the latest products shaping the industry.</p></div>
-      <div class="pillar" data-reveal style="--d:2"><span class="pillar__num">03</span><h3 class="h3">Education</h3><p class="pillar__kicker">Learn from the best.</p><p>Metabolic health, training principles, nutrition and human performance, with insights and practical knowledge from experts and industry professionals.</p><a class="link-arrow" href="#education">Speakers {{ARROW}}</a></div>
-      <div class="pillar" data-reveal style="--d:3"><span class="pillar__num">04</span><h3 class="h3">Challenges</h3><p class="pillar__kicker">Find your limits. Then go further.</p><p>Accessible individual and team challenges. Test your abilities and discover what you're capable of.</p></div>
-      <div class="pillar" data-reveal style="--d:4"><span class="pillar__num">05</span><h3 class="h3">Live entertainment</h3><p class="pillar__kicker">Feel the energy.</p><p>High-energy performances, fitness personalities, live demonstrations and exciting stage moments throughout the weekend.</p></div>
+
+    <div class="xp">
+      <article class="tile" data-reveal>
+        <div class="tile__img"><img src="/assets/img/tests/raw-power-800.webp" width="800" height="533" alt="" loading="lazy"></div>
+        <span class="tile__num" aria-hidden="true">01</span>
+        <p class="tile__kicker">Discover your potential</p>
+        <h3 class="tile__name">Training</h3>
+        <p class="tile__desc">Seven interactive training tests. Watch experts, learn from coaches and discover opportunities to try something new.</p>
+      </article>
+      <article class="tile" data-reveal style="--d:1">
+        <div class="tile__img"><img src="/assets/img/tiles/expo-2019-800.webp" width="800" height="533" alt="" loading="lazy"></div>
+        <span class="tile__num" aria-hidden="true">02</span>
+        <p class="tile__kicker">Discover what's next</p>
+        <h3 class="tile__name">Expo</h3>
+        <p class="tile__desc">Fitness equipment, nutrition, apparel, recovery, health services and performance technology. Meet brands and discover the latest products shaping the industry.</p>
+      </article>
+      <article class="tile" data-reveal>
+        <div class="tile__img"><img src="/assets/img/speakers/giles-yeo.webp" width="640" height="608" alt="" loading="lazy" style="object-position: 50% 25%"></div>
+        <span class="tile__num" aria-hidden="true">03</span>
+        <p class="tile__kicker">Learn from the best</p>
+        <h3 class="tile__name">Education</h3>
+        <p class="tile__desc">Metabolic health, training principles, nutrition and human performance, with insights and practical knowledge from experts and industry professionals.</p>
+      </article>
+      <article class="tile" data-reveal style="--d:1">
+        <div class="tile__img"><img src="/assets/img/temp/training-wide-800.webp" width="800" height="450" alt="" loading="lazy"></div>
+        <span class="tile__num" aria-hidden="true">04</span>
+        <p class="tile__kicker">Find your limits. Then go further.</p>
+        <h3 class="tile__name">Challenges</h3>
+        <p class="tile__desc">Accessible individual and team challenges. Test your abilities and discover what you're capable of.</p>
+      </article>
+      <article class="tile" data-reveal style="--d:2">
+        <div class="tile__img"><img src="/assets/img/tiles/expo-crowd-800.webp" width="800" height="466" alt="" loading="lazy"></div>
+        <span class="tile__num" aria-hidden="true">05</span>
+        <p class="tile__kicker">Feel the energy</p>
+        <h3 class="tile__name">Live entertainment</h3>
+        <p class="tile__desc">High-energy performances, fitness personalities, live demonstrations and exciting stage moments throughout the weekend.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- Seven tests -->
-<section class="section raised" id="tests" aria-labelledby="tests-title">
+<!-- SEVEN TESTS -->
+<section class="section raised slant" id="tests" aria-labelledby="tests-title">
   <div class="container">
     <div class="section-head section-head--split">
       <div class="stack">
-        <p class="eyebrow">Training: the seven tests</p>
-        <h2 class="h2" id="tests-title">Seven tests.<br>Every kind of strong.</h2>
+        <p class="eyebrow">Training: seven ways to get involved</p>
+        <h2 class="h2" id="tests-title">Watch it. Learn it.<br><span class="mark">Try it.</span></h2>
       </div>
-      <p class="lead">Seven interactive training tests, from raw strength to mobility. Watch the experts, learn from coaches, and try them yourself in the public seven-test activities, subject to capacity.</p>
+      <p class="lead">Seven participatory training tests. Discover different ways to move, learn from the experience and explore your potential. Public seven-test activities are available subject to capacity.</p>
     </div>
     <ol class="tests">
-      <li class="test test--intro"><span class="test__name">7 tests.<br>1 arena.</span><p>Each test shows a different side of fitness. Full descriptions are coming from the Games team. <span class="tbc">Descriptions pending</span></p></li>
-      <li class="test" data-reveal><span class="test__num" aria-hidden="true">01</span><h3 class="test__name">Raw Power</h3></li>
-      <li class="test" data-reveal style="--d:1"><span class="test__num" aria-hidden="true">02</span><h3 class="test__name">Explosive Power</h3></li>
-      <li class="test" data-reveal style="--d:2"><span class="test__num" aria-hidden="true">03</span><h3 class="test__name">Fight</h3></li>
-      <li class="test" data-reveal><span class="test__num" aria-hidden="true">04</span><h3 class="test__name">Calisthenics</h3></li>
-      <li class="test" data-reveal style="--d:1"><span class="test__num" aria-hidden="true">05</span><h3 class="test__name">Cardio</h3></li>
-      <li class="test" data-reveal style="--d:2"><span class="test__num" aria-hidden="true">06</span><h3 class="test__name">Balance</h3></li>
-      <li class="test" data-reveal style="--d:3"><span class="test__num" aria-hidden="true">07</span><h3 class="test__name">Mobility</h3></li>
+      <li class="tile tile--intro">
+        <p class="tile__kicker">Training</p>
+        <div><h3 class="tile__name">7 tests.<br>1 arena.</h3><p class="tile__desc">Watch it. Learn it. Try it.</p></div>
+      </li>
+      <li class="tile" data-reveal>
+        <div class="tile__img"><img src="/assets/img/tests/raw-power-480.webp" srcset="/assets/img/tests/raw-power-480.webp 480w, /assets/img/tests/raw-power-800.webp 800w" sizes="(min-width: 900px) 24vw, 46vw" width="800" height="533" alt="" loading="lazy"></div>
+        <span class="tile__num" aria-hidden="true">01</span>
+        <h3 class="tile__name">Raw Power</h3><p class="tile__desc">Strongman-style strength and powerful demonstrations.</p>
+      </li>
+      <li class="tile" data-reveal style="--d:1">
+        <div class="tile__img"><img src="/assets/img/tests/explosive-power-480.webp" srcset="/assets/img/tests/explosive-power-480.webp 480w, /assets/img/tests/explosive-power-800.webp 800w" sizes="(min-width: 900px) 24vw, 46vw" width="800" height="533" alt="" loading="lazy"></div>
+        <span class="tile__num" aria-hidden="true">02</span>
+        <h3 class="tile__name">Explosive Power</h3><p class="tile__desc">Weightlifting, dynamic athletic power and technique.</p>
+      </li>
+      <li class="tile" data-reveal style="--d:2">
+        <div class="tile__img"><img src="/assets/img/tests/fight-480.webp" srcset="/assets/img/tests/fight-480.webp 480w, /assets/img/tests/fight-800.webp 800w" sizes="(min-width: 900px) 24vw, 46vw" width="800" height="533" alt="" loading="lazy"></div>
+        <span class="tile__num" aria-hidden="true">03</span>
+        <h3 class="tile__name">Fight</h3><p class="tile__desc">Combat-inspired technique, safe striking and reactions.</p>
+      </li>
+      <li class="tile" data-reveal>
+        <div class="tile__img"><img src="/assets/img/tests/calisthenics-480.webp" srcset="/assets/img/tests/calisthenics-480.webp 480w, /assets/img/tests/calisthenics-800.webp 800w" sizes="(min-width: 900px) 24vw, 46vw" width="800" height="533" alt="" loading="lazy"></div>
+        <span class="tile__num" aria-hidden="true">04</span>
+        <h3 class="tile__name">Calisthenics</h3><p class="tile__desc">Bodyweight control, holds, pull-ups and progressions.</p>
+      </li>
+      <li class="tile" data-reveal style="--d:1">
+        <div class="tile__img"><img src="/assets/img/tests/cardio-480.webp" srcset="/assets/img/tests/cardio-480.webp 480w, /assets/img/tests/cardio-800.webp 800w" sizes="(min-width: 900px) 24vw, 46vw" width="800" height="533" alt="" loading="lazy"></div>
+        <span class="tile__num" aria-hidden="true">05</span>
+        <h3 class="tile__name">Cardio</h3><p class="tile__desc">Endurance and bleep-test-inspired activities.</p>
+      </li>
+      <li class="tile" data-reveal style="--d:2">
+        <div class="tile__img"><img src="/assets/img/tests/balance-480.webp" srcset="/assets/img/tests/balance-480.webp 480w, /assets/img/tests/balance-800.webp 800w" sizes="(min-width: 900px) 24vw, 46vw" width="800" height="533" alt="" loading="lazy"></div>
+        <span class="tile__num" aria-hidden="true">06</span>
+        <h3 class="tile__name">Balance</h3><p class="tile__desc">Stability, coordination and control.</p>
+      </li>
+      <li class="tile" data-reveal style="--d:3">
+        <div class="tile__img"><img src="/assets/img/tests/mobility-480.webp" srcset="/assets/img/tests/mobility-480.webp 480w, /assets/img/tests/mobility-800.webp 800w" sizes="(min-width: 900px) 24vw, 46vw" width="800" height="533" alt="" loading="lazy"></div>
+        <span class="tile__num" aria-hidden="true">07</span>
+        <h3 class="tile__name">Mobility</h3><p class="tile__desc">Flexibility, movement quality and range of motion.</p>
+      </li>
     </ol>
+    <p class="small muted" style="margin-top: 20px">Training images are illustrative. Activity formats and participation details will be announced as the programme develops.</p>
   </div>
 </section>
 
-<!-- Expo -->
-<section class="section" aria-labelledby="expo-title">
+<!-- EXPO -->
+<section class="section on-paper slant" id="expo" aria-labelledby="expo-title">
   <div class="container grid-2">
-    <figure class="slot slot--tall" data-reveal><div class="slot__media"></div><figcaption class="slot__label"><b>Photo slot</b>Expo floor: brands, stands and visitors</figcaption></figure>
+    <figure data-reveal>
+      <div class="slot" style="--ratio: 3 / 2"><div class="slot__media"><img src="/assets/img/tiles/expo-2019-1200.webp" srcset="/assets/img/tiles/expo-2019-800.webp 800w, /assets/img/tiles/expo-2019-1200.webp 1200w" sizes="(min-width: 900px) 46vw, 92vw" width="1200" height="800" alt="The BodyPower Expo show floor in 2019, packed with visitors and brand stands" loading="lazy"></div><span class="cap">Archive · Expo 2019</span></div>
+      <figcaption class="small" style="margin-top: 10px; color: var(--text-on-paper-2)">BodyPower Expo 2019 archive photography. Exhibitors shown are not confirmed for 2027.</figcaption>
+    </figure>
     <div class="stack-lg" data-reveal style="--d:1">
-      <p class="eyebrow">Expo</p>
-      <h2 class="h2" id="expo-title">Discover<br>what's next.</h2>
-      <p class="lead">Explore fitness equipment, nutrition, apparel, recovery, health services and performance technology. Meet brands and discover the latest products shaping the industry.</p>
-      <p class="muted measure">Participating brands will be listed as they're confirmed. <span class="tbc">Exhibitor list pending</span></p>
-      <a class="link-arrow" href="/partner/?category=games-exhibiting&amp;from=games">Exhibit at the Games {{ARROW}}</a>
+      <p class="eyebrow">Expo: discover what's next</p>
+      <h2 class="h2" id="expo-title">Explore the<br><span class="mark">expo.</span></h2>
+      <p class="lead">Explore fitness products, fresh ideas and services across training, nutrition, apparel, recovery and technology.</p>
+      <ul class="chips" aria-label="Expo categories">
+        <li><span class="chip">Equipment</span></li>
+        <li><span class="chip">Nutrition</span></li>
+        <li><span class="chip">Apparel</span></li>
+        <li><span class="chip">Recovery</span></li>
+        <li><span class="chip">Services</span></li>
+        <li><span class="chip">Technology</span></li>
+      </ul>
+      <p class="muted measure">Connect your brand with a community curious about fitness. Participating brands will be announced as they're confirmed.</p>
+      <a class="btn btn--dark" href="/partner/?category=games-exhibiting&amp;from=games">Exhibit at the Games {{ARROW}}</a>
     </div>
   </div>
 </section>
 
-<!-- Education / speakers -->
-<section class="section raised" id="education" aria-labelledby="edu-title">
+<!-- EDUCATION -->
+<section class="section slant" id="education" aria-labelledby="edu-title">
   <div class="container stack-lg">
     <div class="section-head section-head--split" style="margin-bottom:0">
       <div class="stack">
-        <p class="eyebrow">Education</p>
-        <h2 class="h2" id="edu-title">Learn from<br>the best.</h2>
+        <p class="eyebrow">Education: stay curious</p>
+        <h2 class="h2" id="edu-title">Learn from<br>the <span class="mark">best.</span></h2>
       </div>
       <div class="stack">
         <p class="lead">BodyPower has always showcased the very best talent from around the globe: world-class speakers on metabolic health, training, nutrition and human performance.</p>
@@ -101,96 +192,45 @@ nav: games
       </div>
     </div>
 
+    {{SPEAKERS}}
+
     <figure class="lineup">
       <img src="/assets/img/supertheatre-lineup-1200.webp" srcset="/assets/img/supertheatre-lineup-1200.webp 1200w, /assets/img/supertheatre-lineup.webp 2172w" sizes="(min-width: 1360px) 1264px, 100vw" width="2172" height="724" loading="lazy" alt="BodyPower Supertheatre speaker line-up: Alan Aragon, Martin MacDonald, Professor Giles Yeo, Dr Laurent Bannock, Dr Aamer Khan, Professor Ben Bikman, Dr Nicky Keay, Dr Michael Sagner MD and Dr Saima Ajaz.">
       <figcaption>The Supertheatre line-up. The future of fitness is changing.</figcaption>
     </figure>
-
-    <ul class="speakers">
-      <li class="speaker" data-reveal>
-        <div class="slot"><div class="slot__media"><img src="/assets/img/speakers/giles-yeo.webp" width="640" height="608" loading="lazy" alt="Professor Giles Yeo"></div></div>
-        <span class="speaker__tags">Obesity · Appetite · GLP-1</span>
-        <h3 class="speaker__name">Prof. Giles Yeo</h3>
-        <p class="speaker__bio">Helping BodyPower audiences understand why body weight, appetite and obesity are far more complex than simply telling people to eat less.</p>
-      </li>
-      <li class="speaker" data-reveal style="--d:1">
-        <div class="slot"><div class="slot__media"><img src="/assets/img/speakers/alan-aragon.webp" width="640" height="608" loading="lazy" alt="Alan Aragon"></div></div>
-        <span class="speaker__tags">Nutrition · Body composition</span>
-        <h3 class="speaker__name">Alan Aragon</h3>
-        <p class="speaker__bio">Evidence-led thinking around nutrition, muscle, fat loss and body composition in a world where weight-loss methods are changing rapidly.</p>
-      </li>
-      <li class="speaker" data-reveal style="--d:2">
-        <div class="slot"><div class="slot__media"><img src="/assets/img/speakers/aamer-khan.webp" width="640" height="608" loading="lazy" alt="Dr Aamer Khan"></div></div>
-        <span class="speaker__tags">Hormones · TRT · Longevity</span>
-        <h3 class="speaker__name">Dr Aamer Khan</h3>
-        <p class="speaker__bio">Exploring the growing conversation around hormones, testosterone, ageing and where medical treatment meets performance and lifestyle.</p>
-      </li>
-      <li class="speaker" data-reveal style="--d:3">
-        <div class="slot"><div class="slot__media"><img src="/assets/img/speakers/prof-ben-bikman.webp" width="640" height="608" loading="lazy" alt="Professor Ben Bikman"></div></div>
-        <span class="speaker__tags">Metabolic health · Insulin</span>
-        <h3 class="speaker__name">Prof. Ben Bikman</h3>
-        <p class="speaker__bio">Exploring insulin resistance, metabolic health and the biology shaping some of the biggest changes in obesity, nutrition and health.</p>
-      </li>
-      <li class="speaker" data-reveal>
-        <div class="slot"><div class="slot__media"><img src="/assets/img/speakers/michael-sagner.webp" width="640" height="608" loading="lazy" alt="Dr Michael Sagner"></div></div>
-        <span class="speaker__tags">Prevention · Longevity</span>
-        <h3 class="speaker__name">Dr Michael Sagner MD</h3>
-        <p class="speaker__bio">Looking at how diagnostics, prevention and personalised health could reshape the relationship between fitness and medicine.</p>
-      </li>
-      <li class="speaker" data-reveal style="--d:1">
-        <div class="slot"><div class="slot__media"><img src="/assets/img/speakers/martin-macdonald.webp" width="640" height="608" loading="lazy" alt="Martin MacDonald"></div></div>
-        <span class="speaker__tags">Nutrition · Coaching</span>
-        <h3 class="speaker__name">Martin MacDonald</h3>
-        <p class="speaker__bio">Turning complex nutrition science into practical thinking that coaches can actually use with real people.</p>
-      </li>
-      <li class="speaker" data-reveal style="--d:2">
-        <div class="slot"><div class="slot__media"><img src="/assets/img/speakers/dr-nicky-keay.webp" width="640" height="608" loading="lazy" alt="Dr Nicky Keay"></div></div>
-        <span class="speaker__tags">Hormones · Health · Performance</span>
-        <h3 class="speaker__name">Dr Nicky Keay</h3>
-      </li>
-      <li class="speaker" data-reveal style="--d:3">
-        <div class="slot"><div class="slot__media"></div><span class="slot__label"><b>Photo needed</b>Dr Laurent Bannock</span></div>
-        <h3 class="speaker__name">Dr Laurent Bannock</h3>
-        <span class="tbc">Bio pending</span>
-      </li>
-      <li class="speaker" data-reveal>
-        <div class="slot"><div class="slot__media"></div><span class="slot__label"><b>Photo needed</b>Dr Saima Ajaz</span></div>
-        <h3 class="speaker__name">Dr Saima Ajaz</h3>
-        <span class="tbc">Bio pending</span>
-      </li>
-      <li class="speaker speaker--more" data-reveal style="--d:1">
-        <p class="h4">More speakers &amp; special guests</p>
-        <p class="small muted">To be announced.</p>
-      </li>
-    </ul>
   </div>
 </section>
 
-<!-- Transform gathering -->
-<section class="section" aria-labelledby="gathering-title">
+<!-- TRANSFORM GATHERING -->
+<section class="section on-yellow slant" aria-labelledby="gathering-title">
   <div class="container grid-2">
     <div class="stack-lg" data-reveal>
       <p class="eyebrow">BodyPower Transform</p>
-      <h2 class="h2" id="gathering-title">Your transformation.<br><span class="hl">Our biggest get-together.</span></h2>
-      <p class="lead">Twelve weeks of training. One incredible community. One unforgettable gathering in London.</p>
-      <p class="muted measure">After training and progressing together online, it's time to meet in person. Join fellow Transformers and coaches in London, celebrate achievements and be part of the BodyPower Transform Awards.</p>
-      <p class="notice"><span><strong>Transform is free to join.</strong> A separate BodyPower Games admission ticket is required to attend the event.</span></p>
+      <h2 class="h2" id="gathering-title">Your transformation.<br><span class="mark">Our biggest get-together.</span></h2>
+      <p class="lead" style="color:#2D2E2E">Twelve weeks of training. One incredible community. One unforgettable gathering in London.</p>
+      <p class="measure" style="color:#2D2E2E">After training and progressing together online, it's time to meet in person. Join fellow Transformers and coaches in London, celebrate achievements and be part of the BodyPower Transform Awards.</p>
+      <dl class="promo__meta">
+        <div><dt>BodyPower Transform</dt><dd>Free · 12 weeks</dd></div>
+        <div><dt>Official T-shirt</dt><dd>£15.00 · optional</dd></div>
+        <div><dt>Games admission</dt><dd>Separate ticket</dd></div>
+      </dl>
+      <p class="small" style="color:#2D2E2E">Joining Transform does not automatically include admission to BodyPower Games. Buying a T-shirt does not include event admission.</p>
       <div class="btn-row">
-        <a class="btn btn--primary" {{TRANSFORM_ATTRS}} data-track-location="games_gathering">Join BodyPower Transform{{NEWTAB}} {{EXT}}</a>
-        <a class="btn btn--ghost" {{COMMUNITY_ATTRS}} data-track-location="games_gathering">Join Our Community{{NEWTAB}} {{EXT}}</a>
+        <a class="btn btn--dark" {{TRANSFORM_ATTRS}} data-track-location="games_gathering">Join BodyPower Transform{{NEWTAB}} {{EXT}}</a>
+        <a class="btn btn--outline-dark" {{COMMUNITY_ATTRS}} data-track-location="games_gathering">Join Our Community{{NEWTAB}} {{EXT}}</a>
       </div>
     </div>
     {{TF_PANEL}}
   </div>
 </section>
 
-<!-- Tickets -->
-<section class="section raised" id="tickets" aria-labelledby="tickets-title">
+<!-- TICKETS -->
+<section class="section raised slant" id="tickets" aria-labelledby="tickets-title">
   <div class="container stack-lg">
     <div class="section-head section-head--split" style="margin-bottom:0">
       <div class="stack">
         <p class="eyebrow">Choose your BodyPower experience</p>
-        <h2 class="h2" id="tickets-title">Book early.<br>Save more.<br><span class="hl">Experience more.</span></h2>
+        <h2 class="h2" id="tickets-title">Book early.<br>Save more.<br><span class="mark">Experience more.</span></h2>
       </div>
       <div class="stack">
         <p class="lead">Early Bird ticket prices are valid until 31 December 2026. ULTRA Founders Passes are available in a strictly limited allocation.</p>
@@ -236,12 +276,33 @@ nav: games
   </div>
 </section>
 
-<!-- Routes -->
-<section class="section on-yellow" id="routes" aria-labelledby="routes-title">
+<!-- VISIT -->
+<section class="section on-paper slant" id="visit" aria-labelledby="visit-title">
+  <div class="container stack-lg">
+    <div class="section-head section-head--split" style="margin-bottom:0">
+      <div class="stack">
+        <p class="eyebrow">London / 2027</p>
+        <h2 class="h2" id="visit-title">London. The stage<br>is <span class="mark">set.</span></h2>
+      </div>
+      <p class="lead">One of the world's great cities. Three days dedicated to fitness, performance and possibility. This May, ExCeL London becomes the home of BodyPower Games.</p>
+    </div>
+    <dl class="trio">
+      <div><dt>The dates</dt><dd>21–23 May 2027<small>Three days of live fitness experiences. Standard admission from 10:00; VIP early entry from 09:00.</small></dd></div>
+      <div><dt>The place</dt><dd>ExCeL London<small>Royal Victoria Dock, London E16 1XL. Travel and accessibility information will be added. <span class="tbc">Pending</span></small></dd></div>
+      <div><dt>Your experience</dt><dd>Make the day yours<small>Mix training, discovery, learning, challenges and live entertainment.</small></dd></div>
+    </dl>
+    <div class="btn-row">
+      <a class="btn btn--dark" {{TICKET_ATTRS}} data-track-location="games_visit">Buy Tickets{{TICKET_NOTE}} {{TICKET_ICON}}</a>
+    </div>
+  </div>
+</section>
+
+<!-- ROUTES -->
+<section class="section on-yellow slant" id="routes" aria-labelledby="routes-title">
   <div class="container">
     <div class="section-head">
-      <p class="eyebrow">London. The stage is set.</p>
-      <h2 class="h2" id="routes-title">Choose your way in.</h2>
+      <p class="eyebrow">Get involved</p>
+      <h2 class="h2" id="routes-title">Choose your <span class="mark">way in.</span></h2>
     </div>
     <div class="routes">
       <a class="route" {{TICKET_ATTRS}} data-track-location="games_routes">

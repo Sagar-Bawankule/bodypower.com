@@ -86,3 +86,17 @@ redirects and security/cache headers. No framework preset, no dependencies, no i
 - Copy anything else the old host serves that you still need.
 - Lower the domain's DNS TTL a day beforehand so a rollback is quick.
 - Fill in the `PENDING` items listed in this README, or leave `review_mode` off so they read as quiet notes.
+
+## Design system ("Kinetic")
+Built to feel as bold as bodypowergames.com while staying its own thing. Edit tokens at the top of `src/assets/css/styles.css`.
+- **Slanted bars**: the three rising bars from the BodyPower mark are the brand device: hero overlay (`--bars`), slanted section edges (`.slant`), slanted buttons, ticker band.
+- **Duotone heroes**: yellow/black treatment generated from the photos (`src/assets/img/hero/`). Keeps mixed-quality photography on-brand and text legible. To make a new one: grayscale, gamma ~1.75, map black to `#080808` and white to `#F5DC27` (Pillow `ImageOps.colorize`).
+- **Highlighter word**: `<span class="mark">` puts a slanted yellow block behind one key word. Inside `.hero__title`, `.hl` does the same.
+- **Components**: ticker (`{{TICKER}}`), speaker carousel (`{{SPEAKERS}}`), countdown (`data-countdown`), photo tiles (`.tile`, `.tests`, `.xp`), index rows (`.index`), mobile ticket bar (`.ticket-bar`).
+- **Motion**: ticker, hero bars and parallax respect `prefers-reduced-motion`, and the **Pause motion** button (WCAG 2.2.2) stops the moving band for everyone.
+- **Countdown target** is set in the page markup: `data-countdown="2027-05-21T09:00:00+01:00"`. `ticket_from` in `build.py` feeds the mobile ticket bar price.
+
+## Photography sources (check before launch)
+- **BodyPower's own**: expo archive photos (`tiles/expo-*`, `hero/home`, `hero/story`), logos, speaker cards, T-shirt mockups. Taken from bodypowergames.com / bodypower.com.
+- **Free-licence stock**: Pexels (Calisthenics, Cardio, Games hero) and Wikimedia Commons (credited on `/credits/`).
+- **Needs confirming**: the Raw Power, Explosive Power, Fight, Balance and Mobility test photos came from the BodyPower Games website with no photographer named. They are listed on `/credits/` as "to be confirmed". Replace them or confirm the licence.

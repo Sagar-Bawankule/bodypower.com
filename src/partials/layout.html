@@ -35,6 +35,11 @@
   </main>
   {{FOOTER}}
 
+  <div class="ticket-bar" role="region" aria-label="BodyPower Games tickets">
+    <p class="ticket-bar__text"><b>BodyPower Games</b><small>21–23 May 2027 · Early Bird from {{TICKET_FROM}}</small></p>
+    <a class="btn btn--primary btn--sm" {{TICKET_ATTRS}} data-track-location="ticket_bar">Tickets {{TICKET_ICON}}</a>
+  </div>
+
   <div class="cookie" id="cookie-banner" role="region" aria-label="Cookie consent" hidden>
     <p class="cookie__text">We use essential cookies to run this site. With your permission we'd also use analytics cookies to understand how it's used. <a href="/cookies/">Cookie policy</a></p>
     <div class="cookie__actions">

@@ -43,6 +43,8 @@ CONFIG = {
     "ticket_widget": {"box_office": "bodypower", "event_id": "2207403", "domain": "tickets.bodypower.com"},
     # Existing GTM container from the old site. Only loaded after analytics consent.
     "gtm_id": "GTM-KFL3CRQQ",
+    # Lowest current ticket price, shown on the mobile ticket bar. Update when the Early Bird ends.
+    "ticket_from": "£29",
     # Published on the old site (/pharmacy/). Confirm it is the right general inbox.
     "contact_email": "hello@bodypower.com",
     "transform_url": "https://bodypowertransform.com",
@@ -106,9 +108,11 @@ def tokens():
     t["COMMUNITY_ATTRS"] = ext_attrs(CONFIG["community_url"], "community_click")
     t["FORM_ENDPOINT"] = CONFIG["form_endpoint"] or ""
     t["GTM_ID"] = CONFIG["gtm_id"] or ""
+    t["TICKET_FROM"] = CONFIG["ticket_from"]
     t["MODE"] = "review" if CONFIG["review_mode"] else "present"
     # reusable content partials, referenced in pages as {{TF_PANEL}} etc.
-    t["TF_PANEL"] = (SRC / "partials" / "tf-panel.html").read_text(encoding="utf-8").strip()
+    for name in ("TF_PANEL", "TICKER", "SPEAKERS"):
+        t[name] = (SRC / "partials" / (name.lower().replace("_", "-") + ".html")).read_text(encoding="utf-8").strip()
     t["CONTACT_EMAIL"] = CONFIG["contact_email"] or ""
     socials = [(n, u) for n, u in CONFIG["socials"].items() if u]
     if socials:

@@ -5,10 +5,9 @@ path: /transform/
 nav: transform
 -->
 <section class="hero hero--page" aria-labelledby="transform-title">
-  <figure class="slot hero__bg">
-    <div class="slot__media"><img src="/assets/img/temp/training-wide-1600.webp" srcset="/assets/img/temp/training-wide-800.webp 800w, /assets/img/temp/training-wide-1600.webp 1600w" sizes="100vw" width="1600" height="900" alt="Athlete training with a dumbbell while others train in the background" fetchpriority="high" data-temp-image></div>
-    <figcaption class="slot__label"><b>Photo slot — Transform hero</b>Approved Transform coaching or member photography</figcaption>
-  </figure>
+  <div class="slot hero__bg" style="--focus: 72% 30%">
+    <div class="slot__media"><img src="/assets/img/hero/transform-1600.webp" srcset="/assets/img/hero/transform-1000.webp 1000w, /assets/img/hero/transform-1600.webp 1600w" sizes="100vw" width="1600" height="900" alt="" fetchpriority="high"></div>
+  </div>
   <div class="container hero__content">
     <img class="hero__logo hero__logo--sm" src="/assets/img/brand/bodypower-transform-logo.webp" width="1295" height="300" alt="BodyPower Transform">
     <h1 class="hero__title" id="transform-title">12 weeks.<br><span class="hl">Free.</span><br>Together.</h1>
@@ -85,19 +84,28 @@ nav: transform
   </div>
 </section>
 
-<section class="section on-paper" aria-labelledby="merch-title">
-  <div class="container cta-band">
-    <div class="stack">
-      <p class="eyebrow">Transform merchandise</p>
-      <h2 class="h2" id="merch-title">The Transform T-shirt.</h2>
-      <p class="lead">Wear the programme. Available from the BodyPower shop when stock is ready. <span class="tbc">Stock pending</span></p>
-      <p class="muted">Selected qualifying VIP Games ticket purchasers may also be eligible for a complimentary official Transform T-shirt. Promotional eligibility criteria apply.</p>
+<section class="section on-paper slant" aria-labelledby="merch-title">
+  <div class="container grid-2">
+    <figure data-reveal>
+      <div class="slot" style="--ratio: 1155 / 650; background: #ECEAE5"><div class="slot__media"><img src="/assets/img/products/tee-maroon-pair-1155.webp" srcset="/assets/img/products/tee-maroon-pair-800.webp 800w, /assets/img/products/tee-maroon-pair-1155.webp 1155w" sizes="(min-width: 900px) 46vw, 92vw" width="1155" height="650" alt="Maroon BodyPower Transform T-shirt, front and back" loading="lazy"></div><span class="cap cap--y">Maroon · White</span></div>
+    </figure>
+    <div class="stack" data-reveal style="--d:1">
+      <p class="eyebrow">Wear the journey</p>
+      <h2 class="h2" id="merch-title">The official<br>Transform <span class="mark">T-shirt.</span></h2>
+      <p class="lead">A symbol of belonging to the Transform community, in maroon or white.</p>
+      <p class="price">£15.00 <small>Optional · purchased separately</small></p>
+      <dl class="specs">
+        <div><dt>Colours</dt><dd>Maroon · White</dd></div>
+        <div><dt>Fabric</dt><dd>Cotton Lycra</dd></div>
+        <div><dt>Fabric weight</dt><dd>220 GSM</dd></div>
+      </dl>
+      <p class="small muted">Ordering is not available yet. Sizes, availability and delivery or collection details will be confirmed before ordering. Selected qualifying VIP Games ticket purchasers may also be eligible for a complimentary official Transform T-shirt. Promotional eligibility criteria apply.</p>
+      <a class="btn btn--dark" href="/shop/#transform-tee" data-track="shop_click" data-track-location="transform_merch">See it in the shop {{ARROW}}</a>
     </div>
-    <div><a class="btn btn--dark" href="/shop/" data-track="shop_click" data-track-location="transform_merch">Shop Transform {{ARROW}}</a></div>
   </div>
 </section>
 
-<section class="section on-yellow section--tight" aria-labelledby="tf-join-title">
+<section class="section on-yellow section--tight slant" aria-labelledby="tf-join-title">
   <div class="container cta-band">
     <h2 class="h2" id="tf-join-title">Start your 12 weeks.</h2>
     <div class="btn-row">
